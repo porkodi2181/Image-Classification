@@ -24,20 +24,30 @@ Write your own steps
 
 ## PROGRAM
 
-### Name:
-### Register Number:
+### Name:PORKODI B
+### Register Number:212224240114
 ```python
 class CNNClassifier(nn.Module):
     def __init__(self):
         super(CNNClassifier, self).__init__()
-        # write your code here
+        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.fc1 = nn.Linear(64 * 7 * 7, 128)
+        self.fc2 = nn.Linear(128, 10)
+
+     def forward(self, x):
+        x = self.pool(torch.relu(self.conv1(x)))
+        x = self.pool(torch.relu(self.conv2(x)))
+        x = x.view(x.size(0), -1)
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
 
 
 
 
-
-    def forward(self, x):
-        # write your code here
+        
 
 
 
@@ -45,23 +55,36 @@ class CNNClassifier(nn.Module):
 
 ```python
 # Initialize the Model, Loss Function, and Optimizer
-model =
-criterion =
-optimizer =
+model = CNNClassifier().to(device)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+
 
 ```
 
 ```python
 # Train the Model
 def train_model(model, train_loader, num_epochs=3):
+    model.train()
+    for epoch in range(num_epochs):
+        running_loss = 0.0
+        for images, labels in train_loader:
+            images, labels = images.to(device), labels.to(device)
 
-    # write your code here
+            optimizer.zero_grad()
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+
+            running_loss += loss.item()
 
         
         
         
-        print('Name:        ')
-        print('Register Number:       ')
+        print('Name: PORKODI B ')
+        print('Register Number: 212224240114')
         print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}')
 
 ```
@@ -69,20 +92,26 @@ def train_model(model, train_loader, num_epochs=3):
 ## OUTPUT
 ### Training Loss per Epoch
 
-Include the Training Loss per epoch
+<img width="818" height="681" alt="Screenshot 2026-02-11 160106" src="https://github.com/user-attachments/assets/99cebd61-baba-4e7a-ace9-16d1650b071b" />
+
+
 
 ### Confusion Matrix
 
-Include confusion matrix here
+<img width="944" height="678" alt="Screenshot 2026-02-11 160124" src="https://github.com/user-attachments/assets/1cbd3018-7219-4850-a134-3b6f79ed6b5f" />
+
 
 ### Classification Report
 
-Include Classification Report here
+<img width="740" height="551" alt="Screenshot 2026-02-11 160140" src="https://github.com/user-attachments/assets/a8091874-1328-48cd-acab-a5edc7995568" />
+
 
 
 ### New Sample Data Prediction
 
-Include your sample input and output 
+<img width="696" height="635" alt="Screenshot 2026-02-11 160150" src="https://github.com/user-attachments/assets/0a8dd565-978c-40ac-8691-3c70b60073fe" />
+
 
 ## RESULT
-Include your result here.
+
+Thus the development of a convolutional deep neural network for image classification is executed successfully.
