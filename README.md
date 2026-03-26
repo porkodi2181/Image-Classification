@@ -117,25 +117,25 @@ def train_model(model, train_loader, num_epochs=3):
 
 ## OUTPUT
 ### Training Loss per Epoch
+<img width="453" height="71" alt="image" src="https://github.com/user-attachments/assets/5ce8e2a3-99fe-43b0-8287-ac4ea7b7c01f" />
 
-<img width="818" height="681" alt="Screenshot 2026-02-11 160106" src="https://github.com/user-attachments/assets/99cebd61-baba-4e7a-ace9-16d1650b071b" />
-
-
+<img width="670" height="429" alt="image" src="https://github.com/user-attachments/assets/84a2a698-170a-422f-a8ee-e3c1270f2380" />
 
 ### Confusion Matrix
 
-<img width="944" height="678" alt="Screenshot 2026-02-11 160124" src="https://github.com/user-attachments/assets/1cbd3018-7219-4850-a134-3b6f79ed6b5f" />
+<img width="835" height="677" alt="image" src="https://github.com/user-attachments/assets/569cb272-f74b-4133-aef9-fb738498a7d0" />
+
 
 
 ### Classification Report
 
-<img width="740" height="551" alt="Screenshot 2026-02-11 160140" src="https://github.com/user-attachments/assets/a8091874-1328-48cd-acab-a5edc7995568" />
+<img width="607" height="367" alt="image" src="https://github.com/user-attachments/assets/9be5417b-caa9-47fe-9676-0b92ddb27853" />
 
 
 
 ### New Sample Data Prediction
+<img width="528" height="512" alt="image" src="https://github.com/user-attachments/assets/77fc45c1-648b-4c1c-9b61-3f25fa2de46c" />
 
-<img width="696" height="635" alt="Screenshot 2026-02-11 160150" src="https://github.com/user-attachments/assets/0a8dd565-978c-40ac-8691-3c70b60073fe" />
 
 
 ## RESULT
